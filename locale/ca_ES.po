@@ -1,0 +1,15 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:account.payment.journal,csb_32_grantor:"
+msgid "Grantor"
+msgstr "Cedent"
+
+msgctxt "selection:account.payment.journal,process_method:"
+msgid "CSB 32"
+msgstr "CSB 32"
+
+msgctxt "view:account.payment.journal:"
+msgid "CSB 32 Options"
+msgstr "Opcions CSB 32"
