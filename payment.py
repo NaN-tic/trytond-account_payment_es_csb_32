@@ -161,20 +161,20 @@ class Group:
             return write([record])
 
         values = Group.set_default_csb32_payment_values(group)
-        text = set_file_header_record() + '\r\n'
+        text = set_file_header_record()
         values['record_count'] += 1
-        text += set_order_header_record() + '\r\n'
+        text += set_order_header_record()
         values['record_count'] += 1
         for receipt in values['receipts']:
             values['document_number'] += 1
-            text += set_individual_1_record() + '\r\n'
+            text += set_individual_1_record()
             values['record_count'] += 1
-            text += set_individual_2_record() + '\r\n'
+            text += set_individual_2_record()
             values['record_count'] += 1
-            text += set_individual_3_record() + '\r\n'
+            text += set_individual_3_record()
             values['record_count'] += 1
             values['payment_count'] += 1
-        text += set_order_footer_record() + '\r\n'
+        text += set_order_footer_record()
         values['record_count'] += 2
         text += set_file_footer_record()
         group.attach_file(text)
