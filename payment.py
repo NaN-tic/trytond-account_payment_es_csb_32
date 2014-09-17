@@ -46,7 +46,6 @@ class Group:
             self.raise_user_error('configuration_error',
                 error_description='company_without_complete_address',
                 error_description_args=(values['name'],))
-        values['bank_account'] = values['bank_account'].numbers[0].number
         values['record_count'] = 0
         values['payment_count'] = 0
         values['document_number'] = 0
@@ -120,7 +119,7 @@ class Group:
             record.accept_code = '2'
             # 0: No fees, 1: Expenses, 9: Order expressly notarial protest
             record.expenses_clause = '0'
-            record.account = receipt['bank_account'].numbers[0].number
+            record.account = receipt['bank_account']
             record.sender_name = values['party'].name
             record.receiver_name = receipt['party'].name
             record.additional_information = ''
