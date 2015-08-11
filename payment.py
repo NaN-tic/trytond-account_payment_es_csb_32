@@ -6,12 +6,14 @@ from trytond.model import fields
 from trytond.pool import PoolMeta
 from trytond.pyson import Eval
 import logging
+
 try:
     from retrofix import Record, write, c32
 except ImportError:
+    logger = logging.getLogger(__name__)
     message = ('Unable to import retrofix library.\n'
                'Please install it before install this module.')
-    logging.getLogger('account_payment_es_csb_32').error(message)
+    logger.error(message)
     raise Exception(message)
 
 __all__ = [
