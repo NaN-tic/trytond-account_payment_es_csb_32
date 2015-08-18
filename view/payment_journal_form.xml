@@ -5,7 +5,7 @@ copyright notices and license terms. -->
 <data>
     <xpath expr="/form/field[@name=&quot;ine_code&quot;]"
             position="after">
-        <group col="2" colspan="4" id="csb_32" states="{'invisible': Eval('process_method') != 'csb32'}">
+        <group col="2" colspan="4" id="csb_32">
             <separator string="CSB 32 Options" colspan="2" id="csb_32"/>
             <label name="csb_32_grantor"/>
             <field name="csb_32_grantor"/>

@@ -37,6 +37,16 @@ class Journal:
                     ('csb32', 'CSB 32'),
                     ])
 
+    @classmethod
+    def view_attributes(cls):
+        attributes = super(Journal, cls).view_attributes()
+        attributes.append(
+            ('/form/group[@id="csb_32"]', 'states', {
+                    'invisible': Eval('process_method') != 'csb32',
+                    })
+                )
+        return attributes
+
 
 class Group:
     __name__ = 'account.payment.group'
