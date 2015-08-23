@@ -39,13 +39,10 @@ class Journal:
 
     @classmethod
     def view_attributes(cls):
-        attributes = super(Journal, cls).view_attributes()
-        attributes.append(
-            ('/form/group[@id="csb_32"]', 'states', {
+        return super(Journal, cls).view_attributes() + [
+            ('//group[@id="csb_19"]', 'states', {
                     'invisible': Eval('process_method') != 'csb32',
-                    })
-                )
-        return attributes
+                    })]
 
 
 class Group:
