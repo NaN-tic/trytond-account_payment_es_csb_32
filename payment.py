@@ -59,9 +59,9 @@ class Group:
         values['payment_count'] = 0
         values['document_number'] = 0
         for receipt in values['receipts']:
-            if not receipt['vat_number']:
+            if not receipt['vat_code']:
                 self.raise_user_error('configuration_error',
-                    error_description='party_without_vat_number',
+                    error_description='party_without_vat_code',
                     error_description_args=(receipt['party'].name,))
 
             if not receipt['address']:
@@ -144,7 +144,7 @@ class Group:
             record.receiver_city = receipt['address'].city
             record.receiver_province_code = receipt['province']
             record.receiver_ine = '0000000'
-            record.receiver_nif = receipt['vat_number']
+            record.receiver_nif = receipt['vat_code']
             return write([record])
 
         def set_order_footer_record():
