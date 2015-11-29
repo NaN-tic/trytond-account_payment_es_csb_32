@@ -13,6 +13,10 @@ class AccountPaymentEsCSB32TestCase(unittest.TestCase):
     def setUp(self):
         trytond.tests.test_tryton.install_module('account_payment_es_csb_32')
 
+    def test0005views(self):
+        'Test views'
+        test_view('account_payment_es_csb_32')
+
     def test0006depends(self):
         'Test depends'
         test_depends()
